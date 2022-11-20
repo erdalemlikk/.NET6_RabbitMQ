@@ -17,7 +17,7 @@ public class RabbitMQWorker : BackgroundService
         {
             _producerService.ProduceMessage("Testing RabbitMQ");
             _consumerService.ConsumeMessage();
-            var hourly = (int)TimeSpan.FromMinutes(60).TotalMilliseconds; 
+            var delay = (int)TimeSpan.FromMinutes(1).TotalMilliseconds; 
             await Task.Delay(hourly);
         }
     }
